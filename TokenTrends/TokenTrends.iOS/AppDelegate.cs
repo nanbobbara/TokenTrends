@@ -4,6 +4,9 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace TokenTrends.iOS
 {
@@ -22,6 +25,7 @@ namespace TokenTrends.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            AppCenter.Start("71ba67cd-a587-4a85-a043-666ab2ca4e64", typeof(Analytics), typeof(Crashes));
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
